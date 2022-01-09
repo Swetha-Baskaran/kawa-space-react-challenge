@@ -1,7 +1,7 @@
 {
   "name": "app2.0",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "http://Swetha-Baskaran.github.io/kawa-space-react-challenge",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -15,9 +15,9 @@
     "web-vitals": "^2.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
