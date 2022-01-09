@@ -1,7 +1,7 @@
 {
   "name": "app2.0",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "http://Swetha-Baskaran.github.io/kawa-space-react-challenge",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
