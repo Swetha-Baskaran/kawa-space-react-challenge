@@ -6,7 +6,7 @@ import useAxios from "axios-hooks";
 
 const Container = () => {
     
-    const [{data, loading, error, response}, refetch] = useAxios({
+    const [{data, loading, error, response}] = useAxios({
         method : 'GET',
         url : "https://randomuser.me/api/?inc=gender,name,nat,location,picture,email&results=20"
     })
@@ -16,30 +16,23 @@ const Container = () => {
      let cards = [];
      let initial = {"gender":"loading...","name":{"title":"loading...","first":"loading...","last":"loading..."},"location":{"street":{"number":"loading...","name":"loading..."},"city":"loading...","state":"loading...","country":"loading...","postcode":"loading...","timezone":{"offset":"loading...","description":"loading..."}},"email":"loading...","picture":{"medium":"loading..."}};
 
-     if(loading && !data){
-         for(let i=0; i<20; i++){
-             cards.push(initial)
-         }
+     let [state, setState] = useState(initial);
+     
+
+     if(!loading && data){
+        cards = [...data.results]
      }
      else{
-            cards = [...data.results];
+         
      }
-
-     let [state, setState] = useState(cards[0]);
-    
+   
      useEffect(()=>{
-        if(loading && !data){
-            for(let i=0; i<20; i++){
-             cards.push(initial)
-        }
-        setState(initial)
-        }
-        else{
-            cards = [...data.results];
-        }
-     }, [data, loading, error])
 
-    
+        if(!loading && data){
+            cards = [...data.results]
+            setState(cards[0])
+        }
+     }, [!loading])
   
     let change = (i) =>{
         setState(i);
@@ -50,18 +43,15 @@ const Container = () => {
     
        
     return (
-        
         <div className = "home">
-           {!loading ? <Details value={state} /> : <div>loading...</div>}
-           {!loading ? 
+           {(!loading && data && data.results && (state !== {})) ? <Details value={state} /> : <div>loading...</div>} 
+           {(!loading && data && data.results) ? 
                <div className="cards_holder">
                  { 
                    cards.map((e, index)=>{return <Card value={e} index={index} key={`${index}`} onClick={() => {change(e)} } />})
                  }
-                 {()=>{setState(cards[0])}}
                </div> : <div>loading...</div>}
         </div>
-        
     )
 }
 

@@ -87,7 +87,7 @@ nav ol {
   text-transform: capitalize;
 }
 
-nav img {
+nav .title {
   padding: 5px;
   margin: 5px;
 }
