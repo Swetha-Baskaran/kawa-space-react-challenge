@@ -1,4 +1,4 @@
-
+import React from "react";
 const Details = ({value}) => {
     return(
         <div className = "details">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./card.js";
 import Details from "./details.js";
 import useAxios from "axios-hooks";
