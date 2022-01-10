@@ -43,10 +43,12 @@ const Container = () => {
     
        
     return (
-        <div className = "home">
-           {(!loading && data && data.results && (state !== {})) ? <Details value={state} /> : <div>loading...</div>} 
+        <div className = "home container-fluid">
+           <div className="container">
+              {(!loading && data && data.results && (state !== {})) ? <Details value={state} /> : <div>loading...</div>} 
+           </div>
            {(!loading && data && data.results) ? 
-               <div className="cards_holder">
+               <div className="cards_holder d-flex justify-content-center row">
                  { 
                    cards.map((e, index)=>{return <Card value={e} index={index} key={`${index}`} onClick={() => {change(e)} } />})
                  }

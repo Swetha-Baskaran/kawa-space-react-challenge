@@ -1,6 +1,12 @@
+.App {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .details {
   background-color: white;
   margin: 50px;
+  margin-top: 60px !important;
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -17,11 +23,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 950px !important;
+}
+
+.details .name {
+  margin-top: 20px;
+  text-decoration: underline;
+  color: #ff5722;
 }
 
 .details img {
-  width: 110px;
-  height: 110px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background: wheat;
 }
@@ -32,21 +45,34 @@
           box-sizing: border-box;
   border-radius: 10px;
   background: white;
-  padding: 0px 20px;
+  padding: 15px 20px 2px 20px;
   margin: 15px;
-  width: 260px;
-  height: 150px;
+  width: 270px !important;
   float: left;
   -webkit-box-shadow: 0 0 16px #d3d3d35c;
           box-shadow: 0 0 16px #d3d3d35c;
+  text-decoration: none;
+  color: black;
 }
 
 .card:hover {
+  background: #e3fffd;
+}
+
+.card:focus {
   background: #07d1bf;
   color: white;
   -webkit-box-shadow: 0 0 3px #0000003b;
           box-shadow: 0 0 3px #0000003b;
   border: 0.4px solid transparent;
+}
+
+.card .name {
+  font-size: 21px;
+}
+
+.card .gender {
+  color: #4252ab;
 }
 
 .change_color {
@@ -62,8 +88,7 @@ nav {
   background: #14d3c2;
   margin: 0px;
   color: white;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,6 +96,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 1;
 }
 
 nav ol {
@@ -87,8 +113,58 @@ nav ol {
   text-transform: capitalize;
 }
 
-nav .title {
+nav .title, nav .bar {
   padding: 5px;
   margin: 5px;
+}
+
+.bar, .side-nav {
+  display: none;
+}
+
+.side-nav {
+  position: fixed;
+  top: 50px;
+  background: #04c5b3ab;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  list-style-type: none;
+  padding: 180px 0px;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 66px;
+  left: 640px;
+  transition: 1s;
+}
+
+.side-nav ol {
+  list-style-type: none;
+}
+
+.side-nav li {
+  -webkit-transform: translate(-21px, 0px);
+          transform: translate(-21px, 0px);
+  margin: 15px 0px;
+  border-bottom: 3px transparent;
+}
+
+.side-nav li:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 350px !important;
+  }
+  .bar, .side-nav {
+    display: block;
+  }
+  .navs {
+    display: none;
+  }
 }
 /*# sourceMappingURL=App.css.map */
