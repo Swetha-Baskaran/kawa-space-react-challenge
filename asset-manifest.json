@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/kawa-space-react-challenge/static/css/main.d97db20e.css",
-    "main.js": "/kawa-space-react-challenge/static/js/main.b76e38c3.js",
+    "main.css": "/kawa-space-react-challenge/static/css/main.f3d2cb49.css",
+    "main.js": "/kawa-space-react-challenge/static/js/main.0b5864b9.js",
     "index.html": "/kawa-space-react-challenge/index.html",
-    "main.d97db20e.css.map": "/kawa-space-react-challenge/static/css/main.d97db20e.css.map",
-    "main.b76e38c3.js.map": "/kawa-space-react-challenge/static/js/main.b76e38c3.js.map"
+    "main.f3d2cb49.css.map": "/kawa-space-react-challenge/static/css/main.f3d2cb49.css.map",
+    "main.0b5864b9.js.map": "/kawa-space-react-challenge/static/js/main.0b5864b9.js.map"
   },
   "entrypoints": [
-    "static/css/main.d97db20e.css",
-    "static/js/main.b76e38c3.js"
+    "static/css/main.f3d2cb49.css",
+    "static/js/main.0b5864b9.js"
   ]
 }
